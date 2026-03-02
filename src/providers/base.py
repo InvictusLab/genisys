@@ -1,8 +1,7 @@
-from abc import abstractmethod, ABC
+from abc import ABC, abstractmethod
 
 
 class LLMProvider(ABC):
-
     def __init__(self, api_base_url: str | None = None, api_key: str | None = None) -> None:
         self.api_base_url = api_base_url
         self.api_key = api_key
@@ -18,5 +17,3 @@ class LLMProvider(ABC):
     @abstractmethod
     def _clear_empty_content(self):
         pass
-
-

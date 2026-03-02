@@ -1,5 +1,4 @@
 class AgentLoop:
-
     def __init__(self, query: str):
         self._running = False
         self.query = query
@@ -10,6 +9,3 @@ class AgentLoop:
 
     def stop(self) -> None:
         self._running = False
-
-
-
