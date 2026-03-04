@@ -46,13 +46,13 @@ class LLMProvider(ABC):
     Implementations should handle the specifics of each provider's API while maintaining a consistent interface.
     """
 
-    def __init__(self, api_base_url: str | None = None, api_key: str | None = None) -> None:
+    def __init__(self, base_url: str | None = None, api_key: str | None = None) -> None:
         """
         Args:
-            api_base_url: LLM API base endpoint.
+            base_url: LLM API base endpoint.
             api_key: secret key for accessing the LLM API.
         """
-        self.api_base_url = api_base_url
+        self.base_url = base_url
         self.api_key = api_key
 
     @abstractmethod
@@ -82,7 +82,7 @@ class LLMProvider(ABC):
             messages: List of message dicts with 'role' and 'content'.
             tools: Optional list of tool definitions.
             model: Model identifier (provider-specific).
-            max_tokens:
+            max_tokens: Maximum tokens to generate.
             temperature: Sampling temperature.
             reasoning_effort:
 

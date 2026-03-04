@@ -1,5 +1,5 @@
 ---
-status: planned
+status: done
 created: '2026-03-04'
 tags: []
 priority: medium
@@ -14,7 +14,7 @@ created_at: '2026-03-04T08:22:27.742606386+00:00'
 
 <!-- What are we solving? Why now? -->
 
-Add Alibaba Bailian's Qianwen model as a model provider.
+Add Alibaba Bailian's Qwen model as a model provider.
 
 ## Design
 
@@ -33,16 +33,16 @@ Add Alibaba Bailian's Qianwen model as a model provider.
      - IMPLEMENTATION.md for detailed implementation
      - See spec 012-sub-spec-files for guidance on splitting -->
 
-- [ ] Read the official documentation for Alibaba's Bailian platform to learn how to use the Qwen model. The documentation can be found at: https://bailian.console.aliyun.com/cn-beijing/?tab=doc#/doc.
-- [ ] Write the corresponding functions for providers.qwen.Qwen.
-- [ ] Write the corresponding unit tests in the file tests/providers/test_qwen.py.
+- [x] Read the official documentation for Alibaba's Bailian platform to learn how to use the Qwen model. The documentation can be found at: https://bailian.console.aliyun.com/cn-beijing/?tab=doc#/doc.
+- [x] Write the corresponding functions for providers.qwen.Qwen.
+- [x] Write the corresponding unit tests in the file tests/providers/test_qwen.py.
 
 ## Test
 
 <!-- How will we verify this works? -->
 
-- [ ] The chat method from model provider Qwen can be called normally.
-- [ ] Unit tests can pass.
+- [x] The chat method from model provider Qwen can be called normally.
+- [x] Unit tests can pass.
 
 ## Notes
 

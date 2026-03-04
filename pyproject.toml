@@ -21,6 +21,7 @@ license = {text = "MIT"}
 dependencies = [
   "typer",
   "rich",
+  "openai",
 ]
 requires-python = ">= 3.12"
 
