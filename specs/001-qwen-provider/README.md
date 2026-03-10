@@ -1,5 +1,5 @@
 ---
-status: done
+status: complete
 created: '2026-03-04'
 tags: []
 priority: medium
@@ -8,7 +8,7 @@ created_at: '2026-03-04T08:22:27.742606386+00:00'
 
 # Qwen Provider
 
-> **Status**: planned · **Priority**: medium · **Created**: 2026-03-04
+> **Status**: complete · **Priority**: medium · **Created**: 2026-03-04
 
 ## Overview
 
