@@ -84,7 +84,7 @@ class LLMProvider(ABC):
             model: Model identifier (provider-specific).
             max_tokens: Maximum tokens to generate.
             temperature: Sampling temperature.
-            reasoning_effort:
+            reasoning_effort: Reasoning level.
 
         Returns:
             LLMResponse with content and/or tool calls.

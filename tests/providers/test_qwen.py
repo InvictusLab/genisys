@@ -65,12 +65,12 @@ class TestQwenProviderInit:
         assert p.base_url == "https://custom.example.com/v1"
 
     def test_api_key_from_env(self, monkeypatch):
-        monkeypatch.setenv("DASHSCOPE_API_KEY", "sk-env-key")
+        monkeypatch.setenv("QWEN_API_KEY", "sk-env-key")
         p = QwenProvider()
         assert p.api_key == "sk-env-key"
 
     def test_explicit_key_overrides_env(self, monkeypatch):
-        monkeypatch.setenv("DASHSCOPE_API_KEY", "sk-env-key")
+        monkeypatch.setenv("QWEN_API_KEY", "sk-env-key")
         p = QwenProvider(api_key="sk-explicit")
         assert p.api_key == "sk-explicit"
 

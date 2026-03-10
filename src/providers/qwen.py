@@ -14,7 +14,7 @@ DEFAULT_MODEL = "qwen-plus"
 
 class QwenProvider(LLMProvider):
     """
-    LLM provider for Alibaba's Qwen models via the Bailian platform.
+    LLM provider for Alibaba's Qianwen (Qwen) models via the Bailian platform.
 
     Uses the OpenAI-compatible API endpoint. Requires a DashScope API key,
     which can be set via the ``QWEN_API_KEY`` environment variable.
@@ -27,18 +27,16 @@ class QwenProvider(LLMProvider):
     ) -> None:
         """
         Args:
-            api_key: QWEN API key. Falls back to ``QWEN_API_KEY`` env var.
-            base_url: Override the default Qwen endpoint.
+            api_key: DashScope API key. Falls back to ``QWEN_API_KEY`` env var.
+            base_url: Override the default Bailian endpoint.
         """
         resolved_key = api_key or os.environ.get("QWEN_API_KEY", "")
-        resolved_url = base_url or os.environ.get("QWEN_BASE_URL", "") or DEFAULT_BASE_URL
+        resolved_url = base_url or DEFAULT_BASE_URL
         super().__init__(base_url=resolved_url, api_key=resolved_key)
         self._client = AsyncOpenAI(api_key=resolved_key, base_url=resolved_url)
 
     def get_default_model(self) -> str:
-        """
-        Return the default Qwen model.
-        """
+        """Return the default Qwen model identifier."""
         return DEFAULT_MODEL
 
     async def chat(
@@ -59,8 +57,8 @@ class QwenProvider(LLMProvider):
             model: Model identifier; defaults to ``qwen-plus``.
             max_tokens: Maximum tokens to generate.
             temperature: Sampling temperature in [0, 2).
-            reasoning_effort: When set, enables the model's internal thinking/reasoning mode (supported by QwQ and
-                              Qwen3 thinking variants).
+            reasoning_effort: When set, enables the model's internal thinking/reasoning
+                mode (supported by QwQ and Qwen3 thinking variants).
 
         Returns:
             LLMResponse containing the assistant reply and any tool call requests.
