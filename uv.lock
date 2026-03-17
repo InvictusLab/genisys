@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.12"
 
 [[package]]
@@ -171,6 +171,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "openai" },
+    { name = "pydantic" },
     { name = "rich" },
     { name = "typer" },
 ]
@@ -201,6 +202,7 @@ typecheck = [
 [package.metadata]
 requires-dist = [
     { name = "openai" },
+    { name = "pydantic", specifier = ">=2.12.5" },
     { name = "rich" },
     { name = "typer" },
 ]

@@ -1,12 +1,12 @@
 """Base LLM provider interface."""
 
 from abc import ABC, abstractmethod
-from dataclasses import dataclass, field
 from typing import Any
 
+from pydantic import BaseModel, Field
 
-@dataclass
-class ToolCallRequest:
+
+class ToolCallRequest(BaseModel):
     """
     A tool call request from the LLM.
     """
@@ -16,16 +16,15 @@ class ToolCallRequest:
     arguments: dict[str, Any]
 
 
-@dataclass
-class LLMResponse:
+class LLMResponse(BaseModel):
     """
     Response from an LLM provider.
     """
 
     content: str | None
-    tool_calls: list[ToolCallRequest] = field(default_factory=list)
+    tool_calls: list[ToolCallRequest] = Field(default_factory=list)
     finish_reason: str = "stop"
-    usage: dict[str, int] = field(default_factory=dict)
+    usage: dict[str, int] = Field(default_factory=dict)
     reasoning_content: str | None = None  # Kimi, DeepSeek-R1 etc.
     thinking_blocks: list[dict] | None = None  # Anthropic extended thinking
 
